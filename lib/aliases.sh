@@ -8,6 +8,11 @@ alias fsize="du -csh ./*"
 # Networking
 alias lsports="sudo lsof -PiTCP -sTCP:LISTEN"
 
+# System
+alias topcpu="ps -r -A -o 'user,pid,%cpu,%mem,comm'"
+alias topmem="ps -m -A -o 'user,pid,%cpu,%mem,comm'"
+
+
 # Tool Abbreviations
 alias tf="terraform"
 
