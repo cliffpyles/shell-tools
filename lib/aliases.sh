@@ -4,6 +4,7 @@ alias epoch="date -j -f '%a %b %d %T %Z %Y' '`date`' '+%s'"
 # File Management
 alias dup="cp -pR"
 alias fsize="du -csh ./*"
+alias cheaptree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^-][^\/]*\//━━ /g' -e 's/^/ /' -e 's/━/┣/' -e 's/ ━━/━━/g'"
 
 # Networking
 alias lsports="sudo lsof -PiTCP -sTCP:LISTEN"
@@ -11,7 +12,6 @@ alias lsports="sudo lsof -PiTCP -sTCP:LISTEN"
 # System
 alias topcpu="ps -r -A -o 'user,pid,%cpu,%mem,comm'"
 alias topmem="ps -m -A -o 'user,pid,%cpu,%mem,comm'"
-
 
 # Tool Abbreviations
 alias tf="terraform"
