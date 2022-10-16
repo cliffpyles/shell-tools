@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # File Management
 
 # Shows the resolved directory of an app in the path
