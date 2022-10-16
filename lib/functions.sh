@@ -31,3 +31,7 @@ function aboutme() {
   echo "  ┃"
   echo "  ┗━━"
 }
+
+function bkp() {
+  cp $1{,.bak}
+}
