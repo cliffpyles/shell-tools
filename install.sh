@@ -22,14 +22,18 @@ fi
 echo "Creating shell-tools directory in the user home directory"
 mkdir -p $HOME/.shell-tools
 
-echo "Creating the ZSH config if it doesn't exist"
+echo "Creating the ZSH profile if it doesn't exist"
 touch $HOME/.zshrc
 
+echo "Creating the Bash config if it doesn't exist"
+touch $HOME/.bashrc
+
 echo "Downloading source files to the shell-tools directory"
-curl https://raw.githubusercontent.com/cliffpyles/shell-tools/main/lib/aliases.zsh --output $HOME/.shell-tools/aliases.zsh --silent
-curl https://raw.githubusercontent.com/cliffpyles/shell-tools/main/lib/functions.zsh --output $HOME/.shell-tools/functions.zsh --silent
+curl https://raw.githubusercontent.com/cliffpyles/shell-tools/main/lib/aliases.sh --output $HOME/.shell-tools/aliases.sh --silent
+curl https://raw.githubusercontent.com/cliffpyles/shell-tools/main/lib/functions.sh --output $HOME/.shell-tools/functions.sh --silent
 
-
-echo "Adding the source files to the user profile"
-grep -qxF 'source $HOME/.shell-tools/aliases.zsh' $HOME/.zshrc || echo 'source $HOME/.shell-tools/aliases.zsh' >> $HOME/.zshrc
-grep -qxF 'source $HOME/.shell-tools/functions.zsh' $HOME/.zshrc || echo 'source $HOME/.shell-tools/functions.zsh' >> $HOME/.zshrc
+echo "Adding the source files to the user profiles"
+grep -qxF 'source $HOME/.shell-tools/aliases.sh' $HOME/.zshrc || echo 'source $HOME/.shell-tools/aliases.sh' >> $HOME/.zshrc
+grep -qxF 'source $HOME/.shell-tools/functions.sh' $HOME/.zshrc || echo 'source $HOME/.shell-tools/functions.sh' >> $HOME/.zshrc
+grep -qxF 'source $HOME/.shell-tools/aliases.sh' $HOME/.bashrc || echo 'source $HOME/.shell-tools/aliases.sh' >> $HOME/.bashrc
+grep -qxF 'source $HOME/.shell-tools/functions.sh' $HOME/.bashrc || echo 'source $HOME/.shell-tools/functions.sh' >> $HOME/.bashrc
